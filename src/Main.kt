@@ -5,7 +5,7 @@ fun main() {
     var opcao : Int
 
     do{
-        print("\n1.Verificar se o número é primo\n2.Contar a quantidade de palavras\n3.Media de 5 alunos escolhidos\n4.Ordenar nomes de alunos em ordem alfabética\n5.Lançamento de dados\n0.Sair\nEscolha um dos exercicios acima: ")
+        print("\n1.Verificar se o número é primo\n2.Contar a quantidade de palavras\n3.Media de 5 alunos escolhidos\n4.Ordenar nomes de alunos em ordem alfabética\n5.Lançamento de dados\n6.Análise de Dados Meteorológicos\n0.Sair\nEscolha um dos exercicios acima: ")
         opcao = readln().toInt()
 
         when(opcao){
@@ -14,6 +14,7 @@ fun main() {
             3 -> ex3()
             4 -> ex4()
             5 -> ex5()
+            6 -> ex6()
             0 -> println("Saindo do programa...")
             else -> println("Opção inválida!")
         }
@@ -96,4 +97,19 @@ fun ex5(){
         println("$i° lançamento deu um total de $soma")
 
     }
+}
+
+fun ex6(){
+    var temps = DoubleArray(30)
+
+    for(i in temps.indices){
+        print("\nDigite a temperatuda do ${i+1}° dia: ")
+        temps[i] = readln().toDouble()
+    }
+
+    var tempMedia = temps.average()
+    var tempMax = temps.maxOrNull()
+    var tempMin = temps.minOrNull()
+
+    println("Temperatura média é de $tempMedia°C")
 }
