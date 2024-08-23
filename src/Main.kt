@@ -1,7 +1,20 @@
 import kotlin.math.sqrt
 
 fun main() {
-    ex2()
+    var opcao : Int
+
+    do{
+        print("\n1.Exercício 1\n2.Exercício 2\n3.sair \nEscolha um dos exercicios acima:")
+        opcao = readln().toInt()
+
+        when(opcao){
+            1 -> ex1()
+            2 -> ex2()
+            3 -> println("\nSaindo do programa...")
+            else -> println("Opção inválida!")
+        }
+
+    }while(opcao != 3)
 }
 
 fun ex1(){
@@ -16,7 +29,7 @@ fun ex1(){
     }
 
 
-    print("Informe um valor para verificar se é primo: ")
+    print("\nInforme um valor para verificar se é primo: ")
     val num : Int = readln().toInt()
     if(verificaPrimo(num)){
         println("$num é um número primo")
@@ -26,7 +39,7 @@ fun ex1(){
 }
 
 fun ex2(){
-    print("Escreva uma frase: ")
+    print("\nEscreva uma frase: ")
     val texto : String = readln()
     val palavra = texto.split(" ").count()
     println("A frase tem $palavra palavras")
