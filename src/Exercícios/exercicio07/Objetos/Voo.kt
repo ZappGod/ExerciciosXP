@@ -1,4 +1,4 @@
-package Objetos
+package Exercícios.exercicio07.Objetos
 
 class Voo(var numeroDoVoo : Int, var assentosDisponiveis : IntArray) {
 
